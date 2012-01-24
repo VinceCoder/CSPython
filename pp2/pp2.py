@@ -42,7 +42,7 @@ def main():
 
 	length   = input('Enter the length of the board: ')
 	height   = input('Enter the height of the board: ')
-	contents = [0]*height*length#input('Enter the contents of the board, as a list (i.e. [0,1,....,0,0]): ')
+	contents = input('Enter the contents of the board, as a list (i.e. [0,1,....,0,0]): ')
 	shape    = input('Enter the shape, in terms of default coordinates (i.e. [1,2,6,11]): ')
 	freeSlot = input('Enter the next free slot: ') 
 	
