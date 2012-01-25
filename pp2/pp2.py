@@ -17,7 +17,7 @@ def areShiftsHorizontallyBounded(shape,freeSlot,length):
 	for i in shape:
 		c = getColumnfromPosition(i,length)
 		c2 = getColumnfromPosition(i+diff,length)
-		if c2 <= c:
+		if c2 < c:
 			return False
 	return True
 
@@ -46,8 +46,8 @@ def main():
 	shape    = input('Enter the shape, in terms of default coordinates (i.e. [1,2,6,11]): ')
 	freeSlot = input('Enter the next free slot: ') 
 	
-	if areShiftsHorizontallyBounded(shape, freeSlot, length):
-		if areShiftsVerticallyBounded(shape,freeSlot,height,length):
+	if areShiftsVerticallyBounded(shape,freeSlot,height,length):
+		if areShiftsHorizontallyBounded(shape, freeSlot, length):
 			if isThereFreeSpace(shape,freeSlot,contents):
 				print shift(shape,freeSlot)
 				return 
