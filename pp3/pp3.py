@@ -1,8 +1,10 @@
 def printBoard(length, height, contents):
 	if len(contents) != length*height:
 		print 'Invalid board!'
-	#elif (type(contents) not list) or (type(contents[0]) not int):
-#		print 'Invalid board!'
+	elif not (type(contents) is list):
+		print 'Invalid board!'
+	elif not (type(contents[0]) is int):
+		print 'Invalid board!'	
 	else:
 		print '|'+'-'*(2*length+1)+'|'
 		for i in range(0,height):
