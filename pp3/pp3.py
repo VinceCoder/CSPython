@@ -11,7 +11,8 @@ def printBoard(length, height, contents):
 			print '| '+' '.join(map(str,contents[length*i:length*i+length]))+' |'
 		print '|'+'-'*(2*length+1)+'|'
 		
-			 
-		
+def getPiece(pieceText):
+	a = pieceText.split(' ')
+	return (a[0],int(a[1]),a[2])
 				 
 	
