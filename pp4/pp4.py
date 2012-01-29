@@ -18,31 +18,37 @@ def convertPiecesToDict(pieces):
 		outDict[splitUp[2]]=splitUp[0:2]
 	return outDict
 
-#Returns a list of list of all possible places a piece might fit
-def getAllPossiblePlaces(defaultShape,boardHeight,boardLength, boardContents):
-	possiblePlaces = []
-	for i in boardHeight*boardLength:
+def nextFreeSlot(defaultShape,boardHeight,boardLength,boardContents):
+	for i in range(1,boardHeight*boardLength+1):
 		shiftedLoc = pp2.pieceFits(boardLength,boardHeight,boardContents,defaultShape,i)
 		if len(shiftedLoc):
-			possiblePlaces.append(shiftedLoc)
-	return possiblePlaces
+			return shiftedLoc
+	return []
 
+def isBoardFilled(boardContents):
+	for i in boardContents:
+		if i == 0:
+			return False
+	return True
+	
 def main():
 	params = readParams('load.txt')
 	boardHeight = params['boardHeight']
 	boardLength = params['boardLength']
 	boardMax    = boardHeight*boardLength
 	pieces = convertPiecesToDict(params['boardPieces'])
-	
+	print 'hi'
 	#So we start off with all the different combinations to brute force
 	for combo in pp3.getAllOrderings(pieces.keys()):
-		#Now for each combination, we need to go through all the placements
+		#Now for each combination, we will place each piece one by one using next free slot.
 		contents = [0]*boardMax
 		for pieceName in combo:
-			for loc in getAllPossiblePlaces(pp3.createShape(pieces[pieceName][0]),boardHeight,boardLength,contents):
-				for pos in loc:
-					contents[pos] = 1
+			#Place piece in next free slot
 			
 			
+			
+			
+
+main()	
 	
 	
