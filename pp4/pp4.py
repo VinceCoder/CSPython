@@ -45,9 +45,10 @@ def convertPiecesToDict(pieces,boardLength):
 # the next free position where the shape would fit.
 def nextFreeSlot(defaultShape,boardHeight,boardLength,boardContents):
 	for i in range(1,boardHeight*boardLength+1):
-		shiftedLoc = pp2.pieceFits(boardLength,boardHeight,boardContents,defaultShape,i)
-		if len(shiftedLoc):
-			return shiftedLoc
+		if boardContents[i-1] != 1:
+			shiftedLoc = pp2.pieceFits(boardLength,boardHeight,boardContents,defaultShape,i)
+			if len(shiftedLoc):
+				return shiftedLoc
 	return []
 
 # Given the board contents, determines if the board is completely filled.
