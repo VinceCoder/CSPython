@@ -29,17 +29,18 @@ def areShiftsVerticallyBounded(shape,freeSlot,height,length):
 			return False
 	return True
 
-def isThereFreeSpace(shape,freeSlot,contents):
+def isThereFreeSpace(shape,freeSlot,contents,boardMax):
 	shifted = shift(shape,freeSlot)
 	for i in shifted:
-		if contents[i-1]: 
+		if i > boardMax:
+			return False
+		elif contents[i-1]: 
 			return False
 	return True
 
 def pieceFits(boardLength,boardHeight,boardContents,defaultShape,freeSlot):
-	if areShiftsVerticallyBounded(defaultShape,freeSlot,boardHeight,boardLength):
+	if isThereFreeSpace(defaultShape,freeSlot,boardContents,boardHeight*boardLength):
 			if areShiftsHorizontallyBounded(defaultShape, freeSlot, boardLength):
-				if isThereFreeSpace(defaultShape,freeSlot,boardContents):
-					return shift(defaultShape,freeSlot) 
+				return shift(defaultShape,freeSlot) 
 	return []
 
