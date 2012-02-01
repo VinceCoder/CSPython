@@ -1,6 +1,5 @@
 import pp2
 import pp3
-import time
 import Queue
 
 # Identical to the printBoard function in pp3 with the difference

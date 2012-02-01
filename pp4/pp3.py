@@ -57,6 +57,9 @@ def createShape(shapeName, shapeLength, boardLength):
 			
 	return outShape
 
+# Returns a list of lists with all permutations of the input
+# Len(outList) = n! where n is len(inList)
+# This grows fast, factorial.
 def getAllOrderings(inList):
 	outList = []
 	for l in itertools.permutations(inList):
