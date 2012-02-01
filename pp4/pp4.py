@@ -53,7 +53,10 @@ def nextFreeSlot(defaultShape,boardHeight,boardLength,boardContents):
 
 # Given the board contents, determines if the board is completely filled.
 def isBoardFilled(boardContents):
-    return [1]*len(boardContents) == boardContents
+    for i in boardContents:
+    	if i == 0:
+    		return False
+    return True
 
 # Sometimes solutions can be repeated. This function takes a solution as a list (eg. [T,T,T])
 # along with a list of previous solutions (eg. [[I,I,U],[T,T,T],[X,X,U]]). It checks
