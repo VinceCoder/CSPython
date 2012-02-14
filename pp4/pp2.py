@@ -21,14 +21,6 @@ def areShiftsHorizontallyBounded(shape,freeSlot,length):
 			return False
 	return True
 
-def areShiftsVerticallyBounded(shape,freeSlot,height,length):
-	shifted = shift(shape,freeSlot)
-	maxIndex = height*length
-	for i in shifted:
-		if i > maxIndex:
-			return False
-	return True
-
 def isThereFreeSpace(shape,freeSlot,contents,boardMax):
 	shifted = shift(shape,freeSlot)
 	for i in shifted:

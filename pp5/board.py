@@ -10,7 +10,8 @@ class Board:
 		self.tiles = [0]*self.boardLength*self.boardHeight
 		
 	def takeSnapShot(self):
-		self.snapShots.append(list(self.tiles))
+		if self.tiles not in self.snapShots:
+			self.snapShots.append(list(self.tiles))
 		return self.tiles
 		
 	def shift(self,shape,freeSlot):
@@ -51,7 +52,7 @@ class Board:
 	
 	def findFree(self):
 		for index,val in enumerate(self.tiles):
-			if val == 0:
+			if isinstance(val,int) and val == 0:
 				return index+1
 		return -1
 	

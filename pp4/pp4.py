@@ -57,6 +57,8 @@ def nextFreeSlot(defaultShape,boardHeight,boardLength,boardContents):
 			shiftedLoc = pp2.pieceFits(boardLength,boardHeight,boardContents,defaultShape,i)
 			if len(shiftedLoc):
 				return shiftedLoc
+			else:
+				return []
 	return []
 
 

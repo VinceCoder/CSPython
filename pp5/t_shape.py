@@ -7,10 +7,10 @@ class T_shape:
 		for i in range(1,length+1):
 			self.defaultCoords.append(boardLength+i)
 	
-	def getDefaultCoords():
+	def getDefaultCoords(self):
 		return self.defaultCoords
 		
-	def getLabel():
+	def getLabel(self):
 		return self.label	
 	
 		

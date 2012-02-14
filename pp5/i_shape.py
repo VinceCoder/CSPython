@@ -4,10 +4,10 @@ class I_shape:
 		self.label = label
 		self.defaultCoords = range(1,length+1)
 	
-	def getDefaultCoords():
+	def getDefaultCoords(self):
 		return self.defaultCoords
 		
-	def getLabel():
+	def getLabel(self):
 		return self.label	
 	
 		
