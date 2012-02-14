@@ -82,7 +82,7 @@ def main():
 			shiftedShape = nextFreeSlot(pieces[pieceLabel],boardHeight,boardLength,contents)
 			
 			# If a certain shape doesn't fit, go to the next combo.
-			if len(shiftedShape) == 0:
+			if not shiftedShape:
 				break;
 			
 			#Place piece on the board by updating contents
