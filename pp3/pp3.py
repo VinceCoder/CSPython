@@ -5,7 +5,7 @@ def printBoard(length, height, contents):
 		print 'Invalid board!'
 	elif not (type(contents) is list):
 		print 'Invalid board!'
-	elif not (type(contents[0]) is int):
+	elif not (type(contents[0]) is int or type(contents[0]) is str):
 		print 'Invalid board!'	
 	else:
 		print '|'+'-'*(2*length+1)+'|'
