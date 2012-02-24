@@ -1,23 +1,6 @@
 import pp2
 import pp3
 
-def fancyPrintBoard(length, height, contents):
-    """
-    Identical to the printBoard function in pp3 with the difference
-    that it allows use of strings in contents. This is so we can print
-    the labels of the shapes.
-    """
-    if len(contents) != length*height:
-        print 'Invalid board!'
-    elif not (type(contents) is list):
-        print 'Invalid board!'
-    else:
-        print '|'+'-'*(2*length+1)+'|'
-        for i in range(0,height):
-            print '| '+' '.join(map(str,contents[length*i:length*i+length]))+' |'
-        print '|'+'-'*(2*length+1)+'|'
-
-
 def readParams(fileName):
     """
     Reads the input text file and parses out the height, length, and pieces
@@ -107,7 +90,7 @@ def main():
             
             #Check whether we have a solution
             if isBoardFilled(contents) and not wasSolutionPreviouslyComputed(fancyContents,solutions):
-                fancyPrintBoard(boardLength,boardHeight,fancyContents)
+                pp3.printBoard(boardLength,boardHeight,fancyContents)
                 solutions.append(fancyContents[:])
                 numSolutions = numSolutions + 1
             

@@ -5,7 +5,7 @@ def printBoard(length, height, contents):
 		print 'Invalid board!'
 	elif not (type(contents) is list):
 		print 'Invalid board!'
-	elif not (type(contents[0]) is int):
+	elif not (type(contents[0]) is int or type(contents[0]) is str):
 		print 'Invalid board!'	
 	else:
 		print '|'+'-'*(2*length+1)+'|'
@@ -57,9 +57,6 @@ def createShape(shapeName, shapeLength, boardLength):
 			
 	return outShape
 
-# Returns a list of lists with all permutations of the input
-# Len(outList) = n! where n is len(inList)
-# This grows fast, factorial.
 def getAllOrderings(inList):
 	outList = []
 	for l in itertools.permutations(inList):
